@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+	text-align: center;
+}
+
+input[type=text] {
+	width: 30%;
+	height: 40px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	background-color: white;
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	padding: 12px 20px 12px 40px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+body {
+	text-align: center;
+	background-repeat: no-repeat;
+	background-image:
+		url(http://www.digiphotohub.com/wp-content/uploads/2015/09/bigstock-Abstract-Blurred-Background-Of-92820527.jpg);
+	background-size: cover;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+}
+
+.button {
+	widht: 30px;
+}
+
+.button1 {
+	background-color: white;
+	color: black;
+	border: 2px solid #555555;
+	height: 40px;
+	width: 100px;
+}
+
+.button1:hover {
+	background-color: #555555;
+	color: white;
+}
+
+.md-toolbar-tools {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+</style>
+</head>
+<body align="center">
+	<md-toolbar style="background-color:#555555;height:30px;"
+		class="md-hue-2">
+	<div class="md-toolbar-tools">
+		<input type="text" placeholder="Search" />
+		<div align="right">
+			<md-button class="md-icon-button" aria-label="Favorite">
+			<md-icon md-svg-icon="resource/users.svg" style="color: greenyellow;" />
+			</md-button>
+			<md-menu>
+      <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="home.openMenu($mdOpenMenu, $event)"></md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-list> <md-subheader class="md-no-sticky">My
+		friends</md-subheader> <md-list-item class="md-2-line todo-item"
+			ng-repeat="(index, friend) in friendsRequest">
+
+		<div class="md-list-item-text compact">
+			<p>{{friend.username}}</p>
+		</div>
+		</md-list-item> </md-list>
+        </md-menu-item>
+        <md-menu-divider></md-menu-divider>
+      </md-menu-content>
+    </md-menu>
+			<a data-ng-href="#/" data-ng-click="home.logout()">Logout</a>
+		</div>
+	</div>
+	</md-toolbar>
+	<div style="height: 900px; width: 250px;">
+		<md-sidenav flex style="width:250px" class="md-sidenav-left"
+			md-component-id="left" md-is-locked-open="$mdMedia('gt-md')"
+			md-whiteframe="4"> <md-content layout-padding>
+		<md-list> <md-subheader class="md-no-sticky">My
+		friends</md-subheader> <md-list-item class="md-2-line todo-item"
+			ng-repeat="(index, friend) in friends">
+
+		<div class="md-list-item-text compact">
+			<p>{{friend.username}}</p>
+		</div>
+		</md-list-item> </md-list></md-sidenav>
+	</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<style>
+body {
+	text-align: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image:
+		url(http://www.digiphotohub.com/wp-content/uploads/2015/09/bigstock-Abstract-Blurred-Background-Of-92820527.jpg);
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+}
+
+.button {
+	widht: 30px;
+}
+
+input {
+	width: 100%;
+	height: 40px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	background-color: white;
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	padding: 12px 20px 12px 40px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.login-button {
+	background-color: #555555;
+	color: white;
+	border: 2px solid #555555;
+	height: 40px;
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.login-button:hover {
+	background-color: white;
+	color: black;
+}
+
+.login-container {
+	position: absolute;
+	min-width: 500px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+</style>
+<body>
+	<div class="login-container">
+		<form data-ng-submit="user.checkUser()">
+			<input type="text" placeholder="Username" name="username"
+				data-ng-model="user.userInput.username" /> <br /> <br /> <input
+				type="password" placeholder="Passsword" name="password"
+				data-ng-model="user.userInput.password" /><br /> <br />
+			<md-button type="submit" class="button login-button">Login</md-button>
+			<p>
+				<a href="#register">Not register yet?</a> <a
+					href="https://www.w3schools.com/html/">Forgot password</a>
+			</p>
+		</form>
+	</div>
+</body>
+</html>
