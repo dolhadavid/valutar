@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+	text-align: center;
+}
+
+input[type=text] {
+	background-image:
+		url("https://sfcitypartner.sfgov.org/Images/SearchIcon.png");
+	width: 30%;
+	height: 40px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	background-color: white;
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	padding: 12px 20px 12px 40px;
+	box-sizing: border-box;
+	text-align: center;
+	width: 30%;
+	height: 40px;
+	padding-left: 25px;
+	height: 40px;
+}
+
+body {
+	text-align: center;
+	background-repeat: no-repeat;
+	background-image:
+		url(http://www.digiphotohub.com/wp-content/uploads/2015/09/bigstock-Abstract-Blurred-Background-Of-92820527.jpg);
+	background-size: cover;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+}
+
+.button {
+	widht: 30px;
+}
+
+.button1 {
+	background-color: #32CD32;
+	color: black;
+	border: 2px solid #555555;
+	height: 40px;
+	width: 100px;
+}
+
+.button1:hover {
+	background-color: #555555;
+	color: white;
+}
+
+.md-toolbar-tools {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+.notification-button {
+	position: relative;
+}
+
+.notifications-count {
+	position: absolute;
+	right: 5px;
+	top: 4px;
+	border-radius: 50%;
+	background: red;
+	color: white;
+	text-align: center;
+	display: block;
+	line-height: 1;
+	width: 18px;
+	height: 18px;
+	padding-top: 4px;
+	font-size: 12px;
+}
+</style>
+</head>
+<body align="center">
+	<div style="height: 50px;">
+		<md-toolbar style="background-color:#555555;" class="md-hue-2">
+		<div class="md-toolbar-tools">
+			<input type="text" placeholder="SEARCH" style="width: 700px;"
+				data-ng-keyup="$event.keyCode == 13 && home.search()"
+				data-ng-model="home.userInput.username" />
+			<div style="position: absolute; right: 20px;">
+				<md-button aria-label="My demand"
+					class="md-icon-button notification-button">
+				<div class="notifications-count">1</div>
+				<md-icon md-svg-icon="resource/image/demand.svg"
+					ng-click="showUserDemand($event)" /> </md-button>
+				<md-button aria-label="My offer" class="md-icon-button">
+				<md-icon md-svg-icon="resource/image/offer.svg" /> </md-button>
+				<md-menu> <md-button
+					aria-label="Open phone interactions menu" class="md-icon-button"
+					ng-click="home.openMenu($mdOpenMenu, $event)"> <md-icon
+					md-svg-icon="resource/image/friends.svg" /> </md-button> <md-menu-content
+					width="4"> <md-menu-item> <md-list>
+				<md-subheader class="md-no-sticky">My friends</md-subheader> <md-list-item
+					class="md-2-line todo-item"
+					ng-repeat="(index, friend) in friendsRequest">
+
+				<div class="md-list-item-text compact">
+					<p>{{friend.username}}</p>
+				</div>
+				</md-list-item> </md-list> </md-menu-item> <md-menu-divider></md-menu-divider> </md-menu-content> </md-menu>
+				<a data-ng-href="#/" data-ng-click="home.logout()">Logout</a>
+			</div>
+		</div>
+		</md-toolbar>
+	</div>
+	<div style="position: fixed; height: 100%;">
+		<md-sidenav flex style="width:250px;height:100%;"
+			class="md-sidenav-left" md-component-id="left" md-disable-backdrop
+			md-whiteframe="4" md-is-locked-open="$mdMedia('gt-md')">
+		<md-content> <md-list> <md-subheader
+			style="background-color:#555555;color:white;" class="md-hue-2">Myfriends</md-subheader>
+		<md-list-item class="md-2-line todo-item"
+			ng-repeat="(index, friend) in friends">
+
+		<div class="md-list-item-text compact">
+			<p>{{friend.username}}</p>
+		</div>
+		</md-list-item> </md-list></md-sidenav>
+	</div>
+	<br />
+	<br />
+	<br />
+	<div layout="row" layout-align="center center">
+		<md-list style="width:700px;"> <md-subheader
+			class="md-no-sticky">Demand</md-subheader> <md-list-item
+			class="md-2-line todo-item" ng-repeat="demand in demands">
+		<p>{{demand.user.username}} want to change {{demand.sum}}
+			{{demand.fromcurrency}} to {{demand.tocurrency}}</p>
+		<md-button class="md-primary">Make a offert</md-button> </md-list-item> </md-list>
+	</div>
+</body>
+</html>
