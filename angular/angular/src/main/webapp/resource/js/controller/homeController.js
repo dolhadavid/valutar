@@ -17,6 +17,26 @@ app.controller("homeController", function($http, $scope, $location, $cookies,
 		$mdOpenMenu(ev);
 	};
 
+	this.openMyDemandDialog = function(ev) {
+		$mdDialog.show({
+			templateUrl : 'demandDialog.tmpl.html',
+			parent : angular.element(document.body),
+			targetEvent : ev,
+			clickOutsideToClose : true,
+			fullscreen : false
+		});
+	}
+	
+	this.openMyOfferDialog = function(ev) {
+		$mdDialog.show({
+			templateUrl : 'offerDialog.tmpl.html',
+			parent : angular.element(document.body),
+			targetEvent : ev,
+			clickOutsideToClose : true,
+			fullscreen : false
+		});
+	}
+
 	function init() {
 		if ($cookies.isLogged === 'true') {
 			getFriends();
@@ -32,22 +52,6 @@ app.controller("homeController", function($http, $scope, $location, $cookies,
 					console.log($scope.usersByCriteria);
 				});
 	}
-
-	this.showUserDemand = function($event) {
-		$mdDialog.show({
-			controller : DialogController,
-			templateUrl : 'dialog1.tmpl.html',
-			parent : angular.element(document.body),
-			targetEvent : ev,
-			clickOutsideToClose : true,
-			fullscreen : $scope.customFullscreen
-		// Only for -xs, -sm breakpoints.
-		}).then(function(answer) {
-			$scope.status = 'You said the information was "' + answer + '".';
-		}, function() {
-			$scope.status = 'You cancelled the dialog.';
-		});
-	};
 
 	function refreshData() {
 

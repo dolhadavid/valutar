@@ -103,11 +103,12 @@ th, td {
 				data-ng-model="home.userInput.username" />
 			<div style="position: absolute; right: 20px;">
 				<md-button aria-label="My demand"
+					data-ng-click="home.openMyDemandDialog($event)"
 					class="md-icon-button notification-button">
 				<div class="notifications-count">1</div>
-				<md-icon md-svg-icon="resource/image/demand.svg"
-					ng-click="showUserDemand($event)" /> </md-button>
-				<md-button aria-label="My offer" class="md-icon-button">
+				<md-icon md-svg-icon="resource/image/demand.svg"/> </md-button>
+				<md-button aria-label="My offer" class="md-icon-button" 
+				data-ng-click="home.openMyOfferDialog($event)">
 				<md-icon md-svg-icon="resource/image/offer.svg" /> </md-button>
 				<md-menu> <md-button
 					aria-label="Open phone interactions menu" class="md-icon-button"
