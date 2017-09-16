@@ -98,18 +98,27 @@ th, td {
 	<div style="height: 50px;">
 		<md-toolbar style="background-color:#555555;" class="md-hue-2">
 		<div class="md-toolbar-tools">
-			<input type="search" placeholder="SEARCH" style="width: 700px;"
-				data-ng-keyup="$event.keyCode == 13 && home.search()"
-				data-ng-model="home.userInput.username" />
-			<div style="position: absolute; right: 20px;">
+			
+			<!-- Search Bar -->
+			<md-autocomplete md-no-cache="false"
+				data-ng-keyup="$event.keyCode == 13"
+				placeholder="Search" style="width:80%;"
+				md-selected-item="selectedItem"
+				md-items="username in home.search(searchText)" md-search-text="searchText"
+				md-item-text="username"
+				md-selected-item-change="home.redirectToUserPage(selectedItem)"
+				md-dropdown-items="5"> 
+				<span>{{username}}</span>
+			 </md-autocomplete>
+			<div style="position: flex; right: 20px;">
 				<md-button aria-label="My demand"
 					data-ng-click="home.openMyDemandDialog($event)"
 					class="md-icon-button notification-button">
 				<div class="notifications-count">1</div>
-				<md-icon md-svg-icon="resource/image/demand.svg"/> </md-button>
-				<md-button aria-label="My offer" class="md-icon-button" 
-				data-ng-click="home.openMyOfferDialog($event)">
-				<md-icon md-svg-icon="resource/image/offer.svg" /> </md-button>
+				<md-icon md-svg-icon="resource/image/demand.svg" /> </md-button>
+				<md-button aria-label="My offer" class="md-icon-button"
+					data-ng-click="home.openMyOfferDialog($event)"> <md-icon
+					md-svg-icon="resource/image/offer.svg" /> </md-button>
 				<md-menu> <md-button
 					aria-label="Open phone interactions menu" class="md-icon-button"
 					ng-click="home.openMenu($mdOpenMenu, $event)"> <md-icon
@@ -133,7 +142,7 @@ th, td {
 			class="md-sidenav-left" md-component-id="left" md-disable-backdrop
 			md-whiteframe="4" md-is-locked-open="$mdMedia('gt-md')">
 		<md-content> <md-list> <md-subheader
-			style="background-color:#555555;color:white;" class="md-hue-2">Myfriends</md-subheader>
+			style="background-color:#6f5959;color:white;" class="md-hue-2">Myfriends</md-subheader>
 		<md-list-item class="md-2-line todo-item"
 			ng-repeat="(index, friend) in friends">
 
@@ -147,11 +156,14 @@ th, td {
 	<br />
 	<div layout="row" layout-align="center center">
 		<md-list style="width:700px;"> <md-subheader
-			class="md-no-sticky">Demand</md-subheader> <md-list-item
-			class="md-2-line todo-item" ng-repeat="demand in demands">
-		<p>{{demand.user.username}} want to change {{demand.sum}}
-			{{demand.fromcurrency}} to {{demand.tocurrency}}</p>
-		<md-button class="md-primary">Make a offert</md-button> </md-list-item> </md-list>
+			style="background-color:#6f5959;color:white;" class="md-hue-2">Demand</md-subheader>
+		<md-list-item class="md-2-line"
+			ng-repeat="demand in demands">
+		<div class="md-list-item-text">
+			<p>{{demand.user.username}} want to change {{demand.sum}}
+				{{demand.fromcurrency}} to {{demand.tocurrency}}</p>
+				<md-button class="md-primary">Make a offert</md-button>
+		</div> </md-list-item> </md-list>
 	</div>
 </body>
 </html>

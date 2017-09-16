@@ -26,7 +26,7 @@ app.controller("homeController", function($http, $scope, $location, $cookies,
 			fullscreen : false
 		});
 	}
-	
+
 	this.openMyOfferDialog = function(ev) {
 		$mdDialog.show({
 			templateUrl : 'offerDialog.tmpl.html',
@@ -45,12 +45,17 @@ app.controller("homeController", function($http, $scope, $location, $cookies,
 		}
 	}
 
-	this.search = function() {
-		userService.getUsernameByCriteria(this.userInput.username).then(
+	this.redirectToUserPage = function(username) {
+		$location.path("/home/" + username);
+	};
+
+	this.search = function(username) {
+		userService.getUsernameByCriteria(username).then(
 				function success(response) {
 					$scope.usersByCriteria = response.data;
-					console.log($scope.usersByCriteria);
 				});
+
+		return $scope.usersByCriteria;
 	}
 
 	function refreshData() {

@@ -1,4 +1,3 @@
-app.controller("userInfoController", [ '$routeParams',
-		function($scope, $routeParams) {
-			$scope.username = '';
-		} ]);
+app.controller("userInfoController", [ '$routeParams', function() {
+
+} ]);
