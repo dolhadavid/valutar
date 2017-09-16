@@ -31,7 +31,7 @@ body {
 	text-align: center;
 	background-repeat: no-repeat;
 	background-image:
-		url(http://www.digiphotohub.com/wp-content/uploads/2015/09/bigstock-Abstract-Blurred-Background-Of-92820527.jpg);
+		url(resource/image/background-image.jpg);
 	background-size: cover;
 }
 
@@ -124,7 +124,7 @@ th, td {
 					ng-click="home.openMenu($mdOpenMenu, $event)"> <md-icon
 					md-svg-icon="resource/image/friends.svg" /> </md-button> <md-menu-content
 					width="4"> <md-menu-item> <md-list>
-				<md-subheader class="md-no-sticky">My friends</md-subheader> <md-list-item
+				<md-subheader class="md-no-sticky">Friend requests</md-subheader> <md-list-item
 					class="md-2-line todo-item"
 					ng-repeat="(index, friend) in friendsRequest">
 
@@ -159,7 +159,7 @@ th, td {
 			style="background-color:#6f5959;color:white;" class="md-hue-2">Demand</md-subheader>
 		<md-list-item class="md-2-line"
 			ng-repeat="demand in demands">
-		<div class="md-list-item-text">
+		<div class="md-list-item-text" style="background-color:white">
 			<p>{{demand.user.username}} want to change {{demand.sum}}
 				{{demand.fromcurrency}} to {{demand.tocurrency}}</p>
 				<md-button class="md-primary">Make a offert</md-button>

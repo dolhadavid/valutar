@@ -70,4 +70,13 @@ public class UserController {
 
 		return ResponseEntity.ok(userService.getUserFriendsRequest(userModel));
 	}
+	
+	@RequestMapping(value = "/friendsRequest/{username}", method = RequestMethod.POST)
+	public void getUserFriendsRquest(@PathVariable String username) {
+		UserModel userModel = (UserModel) SessionUtil.getInstance().session().getAttribute("user");
+
+		if (userModel != null) {
+			
+		}
+	}
 }

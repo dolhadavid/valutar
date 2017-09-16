@@ -1,25 +1,25 @@
 <md-dialog aria-label="My demands">
 <form ng-cloak>
 	<md-toolbar>
-	<div class="md-toolbar-tools">
-		<h2>My demands</h2>
-		<span flex></span>
-		<md-button class="md-icon-button" ng-click="demand.cancel()">
-		<md-icon md-svg-src="resource/image/close.svg"
-			aria-label="Close dialog"></md-icon> </md-button>
-	</div>
+		<div class="md-toolbar-tools">
+			<h1>My demands</h1>
+			<span flex></span>
+			<md-button class="md-icon-button" data-ng-click="cancel()">
+				<md-icon md-svg-src="resource/image/close.svg" aria-label="Close dialog"></md-icon>
+			</md-button>
+		</div>
 	</md-toolbar>
 
 	<md-dialog-content>
-	<div class="md-dialog-content">
-
-		<md-list style="width:700px;">
-		<md-list-item class="md-2-line todo-item"
-			ng-repeat="demand in demands">
-		<p>{{demand.user.username}} want to change {{demand.sum}}
-			{{demand.fromcurrency}} to {{demand.tocurrency}}</p>
-		<md-button class="md-primary">Delete</md-button> </md-list-item> </md-list>
-	</div>
+		<div class="md-dialog-content">
+			<md-list style="width:700px;">
+				<md-list-item class="md-2-line todo-item" data-ng-repeat="demand in myDemands">
+					<p>{{demand.user.username}} want to change {{demand.sum}}
+						{{demand.fromcurrency}} to {{demand.tocurrency}}</p>
+					<md-button class="md-primary">Delete</md-button> 
+				</md-list-item> 
+			</md-list>
+		</div>
 	</md-dialog-content>
 </form>
 </md-dialog>

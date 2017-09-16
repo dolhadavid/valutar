@@ -20,6 +20,9 @@ app.controller("homeController", function($http, $scope, $location, $cookies,
 	this.openMyDemandDialog = function(ev) {
 		$mdDialog.show({
 			templateUrl : 'demandDialog.tmpl.html',
+			controller:'demandDialogController',
+			controllerAs:'demandDialog',
+			scope: angular.extend($scope.$new(), { cancel: function() {$mdDialog.cancel();} }),
 			parent : angular.element(document.body),
 			targetEvent : ev,
 			clickOutsideToClose : true,
@@ -30,6 +33,8 @@ app.controller("homeController", function($http, $scope, $location, $cookies,
 	this.openMyOfferDialog = function(ev) {
 		$mdDialog.show({
 			templateUrl : 'offerDialog.tmpl.html',
+			controller:'offerDialogController',
+			controllerAs:'offerDialog',
 			parent : angular.element(document.body),
 			targetEvent : ev,
 			clickOutsideToClose : true,

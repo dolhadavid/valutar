@@ -38,7 +38,7 @@ app.config(function($routeProvider, $locationProvider) {
 			}
 		},
 		controller : 'homeController',
-		controllerAs : 'home'
+		controllerAs : 'home',
 	}).when('/register', {
 		templateUrl : 'register.html',
 		controller : 'registerController',

@@ -1,6 +1,16 @@
-app.controller("demandDialogController", [ '$routeParams', function() {
+app.controller("demandDialogController", ['$scope','demandService', function($scope,demandService) {
 
-	this.cancel = function() {
-		$mdDialog.cancel();
-	};
+	$scope.myDemands = [];
+
+	init();
+
+	function init() {
+		getMyDemands();
+	}
+
+	function getMyDemands() {
+		demandService.getAllDemandsByUser().then(function success(response) {
+			$scope.myDemands = response.data;
+		});
+	}
 } ]);
