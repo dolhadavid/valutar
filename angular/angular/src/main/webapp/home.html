@@ -119,6 +119,9 @@ th, td {
 				<md-button aria-label="My offer" class="md-icon-button"
 					data-ng-click="home.openMyOfferDialog($event)"> <md-icon
 					md-svg-icon="resource/image/offer.svg" /> </md-button>
+				<md-button aria-label="My transaction" class="md-icon-button"
+					data-ng-click="home.openMyOfferDialog($event)"> <md-icon
+					md-svg-icon="resource/image/transaction.svg" /> </md-button>
 				<md-menu> <md-button
 					aria-label="Open phone interactions menu" class="md-icon-button"
 					ng-click="home.openMenu($mdOpenMenu, $event)"> <md-icon
@@ -161,8 +164,9 @@ th, td {
 			ng-repeat="demand in demands">
 		<div class="md-list-item-text" style="background-color:white">
 			<p>{{demand.user.username}} want to change {{demand.sum}}
-				{{demand.fromcurrency}} to {{demand.tocurrency}}</p>
+				{{demand.fromcurrency}} to {{demand.tocurrency}}
 				<md-button class="md-primary">Make a offert</md-button>
+				</p>
 		</div> </md-list-item> </md-list>
 	</div>
 </body>

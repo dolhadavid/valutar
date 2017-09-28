@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import model.DemandModel;
+import model.OfferModel;
 import model.UserModel;
 import service.DemandService;
 import util.SessionUtil;
@@ -22,10 +22,10 @@ public class OfferController {
 	private DemandService demandService;
 
 	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<DemandModel> getUserDemands() {
+	public List<OfferModel> getUserOffers() {
 		UserModel userModel = (UserModel) SessionUtil.getInstance().session().getAttribute("user");
 		if (userModel != null) {
-			return this.demandService.getAllDemandsByUser(userModel);
+			return null;
 		} else {
 			return null;
 		}

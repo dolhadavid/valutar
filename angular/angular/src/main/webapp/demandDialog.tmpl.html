@@ -14,11 +14,13 @@
 		<div class="md-dialog-content">
 			<md-list style="width:700px;">
 				<md-list-item class="md-2-line todo-item" data-ng-repeat="demand in myDemands">
-					<p>{{demand.user.username}} want to change {{demand.sum}}
-						{{demand.fromcurrency}} to {{demand.tocurrency}}</p>
+					<p>{{demand.user.username}} wants to change {{demand.sum}}
+						{{demand.fromcurrency}} to {{demand.tocurrency}}
 					<md-button class="md-primary">Delete</md-button> 
-				</md-list-item> 
+					</p>
+				</md-list-item>
 			</md-list>
+			<md-button class="md-primary">New demand</md-button> 
 		</div>
 	</md-dialog-content>
 </form>
