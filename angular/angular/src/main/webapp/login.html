@@ -83,11 +83,12 @@ input {
 			<br /> 
 			<br />
 			<md-button type="submit" class="button login-button">Login</md-button>
-			<p>
-				<a href="#register">Not register yet?</a>
-				<a href="https://www.w3schools.com/html/">Forgot password</a>
-			</p>
 		</form>
+		
+		<p>
+			<a href="#register" data-ng-click="user.openRegisterDialog($event)">Not register yet?</a>
+			<a href="https://www.w3schools.com/html/">Forgot password</a>
+		</p>
 	</div>
 </body>
 </html>

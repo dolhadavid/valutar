@@ -9,8 +9,12 @@ app.controller("homeController", function($http, $scope, $location, $cookies,
 	$scope.demands = [];
 
 	$scope.usersByCriteria = [];
+	
+	$scope.myDemands = [];
 
 	init();
+	
+	
 
 	this.openMenu = function($mdOpenMenu, ev) {
 		originatorEv = ev;
@@ -54,8 +58,12 @@ app.controller("homeController", function($http, $scope, $location, $cookies,
 	function init() {
 		if ($cookies.isLogged === 'true') {
 			getFriends();
+			
 			getFriendsRequest();
+			
 			getAllDemands();
+			
+			getMyDemands();
 		}
 	}
 
@@ -80,6 +88,12 @@ app.controller("homeController", function($http, $scope, $location, $cookies,
 
 	}
 	;
+	
+	function getMyDemands() {
+		demandService.getAllDemandsByUser().then(function success(response) {
+			$scope.myDemands = response.data;
+		});
+	}
 
 	function getAllDemands() {
 		demandService.getAllDemands().then(function success(response) {

@@ -1,5 +1,5 @@
 app.controller("userController", function($http, $scope, $location, $cookies,
-		loginService) {
+		$mdDialog, loginService) {
 
 	this.checkUser = function() {
 		if (this.userInput.username != "" && this.userInput.password != "") {
@@ -18,4 +18,17 @@ app.controller("userController", function($http, $scope, $location, $cookies,
 			});
 		}
 	};
+
+	this.openRegisterDialog = function(ev) {
+		$mdDialog.show({
+			templateUrl : 'registerDialog.tmpl.html',
+			controller : 'registerController',
+			controllerAs : 'register',
+			windowClass: 'app-modal-window',
+			parent : angular.element(document.body),
+			targetEvent : ev,
+			clickOutsideToClose : true,
+			fullscreen : false
+		});
+	}
 });
