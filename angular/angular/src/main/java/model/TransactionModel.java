@@ -9,27 +9,31 @@ public class TransactionModel {
 	private String fromCurrency;
 	private String toCurrency;
 	private String username;
-	private Integer sum;
+	private Integer sumFrom;
+	private Integer sumTo;
 
 	public TransactionModel() {
 	}
-
-	public TransactionModel(Date data, String fromCurrency, String toCurrency, String username, Integer sum) {
+	
+	public TransactionModel(Date data, String fromCurrency, String toCurrency, String username, Integer sumFrom,
+			Integer sumTo) {
 		this.data = data;
 		this.fromCurrency = fromCurrency;
 		this.toCurrency = toCurrency;
 		this.username = username;
-		this.sum = sum;
+		this.sumFrom = sumFrom;
+		this.sumTo = sumTo;
 	}
 
 	public TransactionModel(Integer id, Date data, String fromCurrency, String toCurrency, String username,
-			Integer sum) {
+			Integer sumFrom, Integer sumTo) {
 		this.id = id;
 		this.data = data;
 		this.fromCurrency = fromCurrency;
 		this.toCurrency = toCurrency;
 		this.username = username;
-		this.sum = sum;
+		this.sumFrom = sumFrom;
+		this.sumTo = sumTo;
 	}
 
 	public Integer getId() {
@@ -72,11 +76,19 @@ public class TransactionModel {
 		this.username = username;
 	}
 
-	public Integer getSum() {
-		return sum;
+	public Integer getSumFrom() {
+		return sumFrom;
 	}
 
-	public void setSum(Integer sum) {
-		this.sum = sum;
+	public void setSumFrom(Integer sumFrom) {
+		this.sumFrom = sumFrom;
+	}
+
+	public Integer getSumTo() {
+		return sumTo;
+	}
+
+	public void setSumTo(Integer sumTo) {
+		this.sumTo = sumTo;
 	}
 }

@@ -19,16 +19,16 @@ import util.SessionUtil;
 @RequestMapping("/transaction")
 public class TransactionController {
 
-	@Resource
-	private DemandService demandService;
+//	@Resource
+//	private DemandService demandService;
 
-	/*@RequestMapping(value = "/userTransactions", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<TransactionModel> getUserTransactions() {
-		UserModel userModel = (UserModel) SessionUtil.getInstance().session().getAttribute("user");
-		if (userModel != null) {
-			//return this.demandService.getAllDemandsByUser(userModel);
-		} else {
-			return null;
-		}
-	}*/
+//	@RequestMapping(value = "/userTransactions", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+//	public List<TransactionModel> getUserTransactions() {
+//		UserModel userModel = (UserModel) SessionUtil.getInstance().session().getAttribute("user");
+//		if (userModel != null) {
+////			return 
+//		} else {
+//			return null;
+//		}
+//	}
 }

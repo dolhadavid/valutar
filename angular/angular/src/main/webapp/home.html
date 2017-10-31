@@ -111,24 +111,13 @@ th, td {
         	</md-tab-body>
       	</md-tab>
       	<md-tab label="my demands">
-      		<md-tab-body>
-<!--       		<div ng-include="demandDialog.tmpl.html"></div> -->
-        	<div>
-				<md-list style="width:700px;">
-					<md-list-item class="md-2-line todo-item" data-ng-repeat="demand in myDemands">
-						<p>{{demand.user.username}} wants to change {{demand.sum}}
-							{{demand.fromcurrency}} to {{demand.tocurrency}}
-						<md-button class="md-primary">Delete</md-button> 
-						</p>
-					</md-list-item>
-				</md-list>
-				<md-button class="md-primary">New demand</md-button> 
-			</div>
-			</md-tab-body>
+      		<div ng-include src="'pages/demandTab.tmpl.html'"></div>
       	</md-tab>
       	<md-tab label="my offers">
+      		<div ng-include src="'pages/offerTab.tmpl.html'"></div>
       	</md-tab>
       	<md-tab label="my transactions">
+      		<div ng-include src="'pages/transactionTab.tmpl.html'"></div>
       	</md-tab>
       	<md-tab>
             <a data-ng-href="#/" data-ng-click="home.logout()">Logout</a>
