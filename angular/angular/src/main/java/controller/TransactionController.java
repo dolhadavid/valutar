@@ -12,23 +12,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import model.TransactionModel;
 import model.UserModel;
-import service.DemandService;
+import service.TransactionService;
 import util.SessionUtil;
 
 @RestController
 @RequestMapping("/transaction")
 public class TransactionController {
 
-//	@Resource
-//	private DemandService demandService;
+	@Resource
+	private TransactionService transactionService;
 
-//	@RequestMapping(value = "/userTransactions", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-//	public List<TransactionModel> getUserTransactions() {
-//		UserModel userModel = (UserModel) SessionUtil.getInstance().session().getAttribute("user");
-//		if (userModel != null) {
-////			return 
-//		} else {
-//			return null;
-//		}
-//	}
+	@RequestMapping(value = "/userTransactions", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<TransactionModel> getUserTransactions() {
+		UserModel userModel = (UserModel) SessionUtil.getInstance().session().getAttribute("user");
+		if (userModel != null) {		
+			return null;
+		} else {
+			return null;
+		}
+	}
 }
